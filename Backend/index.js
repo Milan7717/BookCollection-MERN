@@ -24,12 +24,12 @@ app.use ('/books',bookRoute);
 app.use(cors());
 
 //oprion2-> all cutom users 
-// app.use (cors({
-//   origin:'http://localhost:3000',
-//   method:['GET','POST','PUT','DELETE'],
-//   allowedHeafers:['Custom-Type'],
-// })
-// );
+app.use (cors({
+  origin:'http://localhost:3000',
+  method:['GET','POST','PUT','DELETE'],
+  allowedHeafers:['Custom-Type'],
+})
+);
 
 mongoose
   .connect(mongoDBURL)

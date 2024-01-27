@@ -2,11 +2,12 @@ import React from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { BrowserRouter,Route,Routes } from 'react-router-dom'
+
 import Home from './pages/Home'
 import CreateBook from './pages/CreateBook'
-import DeleteBook from '../../frontend/src/pages/DeleteBook'
 import EditBook from './pages/EditBook'
-import ShowBook from '../../frontend/src/pages/ShowBook'
+import DeleteBook from './pages/DeleteBook'
+import ShowBook from './pages/ShowBook';
 
 
 function App() {
