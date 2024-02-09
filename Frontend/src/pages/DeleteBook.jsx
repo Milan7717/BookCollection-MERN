@@ -6,35 +6,37 @@ import Spinner from "../components/Spinner";
 
 const DeleteBook = () => {
   const [loading, setLoading] = useState(false);
-
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:3000/books/${id}`)
+      .delete(`http://localhost:5555/books/${id}`)
       .then(() => {
         setLoading(false);
         navigate("/");
       })
       .catch((error) => {
-        setLoading(false);
-        alert("An error occured");
         console.log(error);
+        setLoading(true);
+        alert("error deleting book");
       });
   };
+
   return (
     <>
       <div className="p-4">
         <BackButton />
         <h1 className="text-3xl my-4">Delete Book</h1>
         {loading ? <Spinner /> : ""}
-        <div className="flex items-center flex-col border-2 border-sky-400 rounded-xl w-[600px] px-8 mx-auto">
-          <h3 className="text-2xl ">You sure want to delete this book</h3>
+        <div className="flex flex-col item-center border-2 border-sky-400 rounded-xl w-[600px] p-8 mx-auto">
+          <h3 className="text-2xl text-center">
+            Are you sure you want to delete this book?
+          </h3>
 
           <button
-            className="p-4 bg-red-600 text-white m-8 w-full"
+            className="p-4 bg-red-600 text-white m-4 w-full"
             onClick={handleDeleteBook}
           >
             Yes delete it.

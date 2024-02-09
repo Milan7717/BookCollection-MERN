@@ -1,3 +1,3 @@
-export const PORT=3000;
+export const PORT = 5555;
 
-export const mongoDBURL="mongodb+srv://milan:test123@cluster0.z7m7wtb.mongodb.net/book-collection?retryWrites=true&w=majority"
+export const mongoDBURL="mongodb+srv://root:root@cluster0.m0otflj.mongodb.net/bookcollection?retryWrites=true&w=majority";
